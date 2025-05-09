@@ -343,7 +343,7 @@ export function normalizeEvent(event: ImageHandlerEvent | S3Event, s3ObjectLambd
     const queryParams = extractObjectLambdaQueryParams(queryParamsString);
     return {
       // URLs from S3 Object Lambda include the origin path
-      path: pathString.split("/image").slice(1).join("/image"),
+      path: pathString,
       queryStringParameters: queryParams,
       requestContext: {},
       headers: userRequest.headers,
